@@ -15,9 +15,20 @@ class SendController extends \Phalcon\Mvc\Controller
 			);
 			$response = $this->smsweb->post('http://batikku.ml/s.py',$params);
 			$this->view->response = $response;
+			return $this->dispatcher->forward(array(
+				'action' => 'sent',
+				'params' => array($response)
+			));
 		}
 		
     }
+
+	public function sentAction($response)
+	{
+		$this->view->title = "Sent - ";
+		$this->view->selectmenu = "send";
+		$this->view->response = $response;
+	}
 
 }
 
