@@ -2,7 +2,7 @@
     {{ tag_html('h1')}} Sending sms!{{ tag_html_close('h1')}}
 {{tag_html_close("div")}}
 
-<form class="form-horizontal" role="form">
+<form class="form-horizontal" role="form" method="post">
   <div class="form-group">
     <label class="control-label col-sm-2" for="email">Number(s) : </label>
     <div class="col-sm-10">
@@ -23,6 +23,6 @@
 </form>
 
 
-<p>this is response : {{ response }}</p>
+<p>SMS Sending Form</p>
 
-<em>This page is located at views/index/index.phtml</em>
+<em>This page is for sending sms</em>
