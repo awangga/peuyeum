@@ -1,7 +1,7 @@
 <div class="page-header">
-    <h1>About SWIM</h1>
+    <h1>About peuyeum</h1>
 </div>
 
-<p>Swim is UI for smsweb</p>
+<p>peuyeum is web user interface for smsweb</p>
 
-<em>Meet the team</em>
+<em>Meet the team at www.peuyeum.com</em>
