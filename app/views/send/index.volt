@@ -1,6 +1,6 @@
-<div class="page-header">
-    <h1>Sending sms!</h1>
-</div>
+{{ tag_html("div",["class": "page-header"])}}
+    {{ tag_html('h1')}} Sending sms!{{ tag_html_close('h1')}}
+{{tag_html_close("div")}}
 
 <form class="form-horizontal" role="form">
   <div class="form-group">
