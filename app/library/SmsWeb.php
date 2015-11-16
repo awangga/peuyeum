@@ -26,6 +26,15 @@ class SmsWeb
 	    curl_close($ch);
 	    return $output;
     }
+	public function sendSMS($rcpt,$msg)
+	{
+		$params = array(
+		   "rcpt" => $rcpt,
+		   "msg" => $msg
+		);
+		$response = $this->post('http://batikku.ml/s.py',$params);
+		return $response;
+	}
 
 }
 

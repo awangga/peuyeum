@@ -8,13 +8,10 @@ class SendController extends \Phalcon\Mvc\Controller
 		$this->view->title = "Send - ";
 		$this->view->selectmenu	= "send";
 		if($this->request->isPost()){
-			
-			$params = array(
-			   "rcpt" => $this->request->getPost('rcpt'),
-			   "msg" => $this->request->getPost('msg')
-			);
-			$response = $this->smsweb->post('http://batikku.ml/s.py',$params);
-			$this->view->response = $response;
+			$response = $this->smsweb->sendSMS(
+				$this->request->getPost('rcpt'),
+				$this->request->getPost('msg')
+				);
 			return $this->dispatcher->forward(array(
 				'action' => 'sent',
 				'params' => array($response)
