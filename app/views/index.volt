@@ -52,7 +52,7 @@
 		                <li {% if selectmenu == "sentitems" %}class="active"{% endif %}>
 		                    <a href="sentitems"><span class="fa-stack fa-lg pull-left"><i class="fa fa-check fa-stack-1x "></i></span>Sent Items</a>
 		                </li>
-		                <li {% if selectmenu == "errrors" %}class="active"{% endif %}>
+		                <li {% if selectmenu == "errors" %}class="active"{% endif %}>
 		                    <a href="errors"><span class="fa-stack fa-lg pull-left"><i class="fa fa-close fa-stack-1x "></i></span>Errors</a>
 		                </li>
 		                <li {% if selectmenu == "about" %}class="active"{% endif %}>
