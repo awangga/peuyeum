@@ -1,5 +1,6 @@
 # peuyeum
 SMS Broadcast Management Based on SMS Web
+github.com/awangga/smsweb
 
 ## How To Run
  1. Put on Yout htdocs or public www folder of your app server
