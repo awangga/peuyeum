@@ -14,16 +14,16 @@ class SendController extends \Phalcon\Mvc\Controller
 				);
 			return $this->dispatcher->forward(array(
 				'action' => 'sent',
-				'params' => array($response)
+				'params' => array($this->view->title,$this->view->selectmenu,$response)
 			));
 		}
 		
     }
 
-	public function sentAction($response)
+	public function sentAction($title,$selectmenu,$response)
 	{
-		$this->view->title = "Sent - ";
-		$this->view->selectmenu = "send";
+		$this->view->title = $title;
+		$this->view->selectmenu = $selectmenu;
 		$this->view->response = $response;
 	}
 	
@@ -31,14 +31,32 @@ class SendController extends \Phalcon\Mvc\Controller
 	{
 		$this->view->title = "Sending Personal - ";
 		$this->view->selectmenu = "mpersonal";
-		//$this->view->response = $response;
+		if($this->request->isPost()){
+			$response = $this->smsweb->sendSMS(
+				$this->request->getPost('rcpt'),
+				$this->request->getPost('msg')
+				);
+			return $this->dispatcher->forward(array(
+				'action' => 'sent',
+				'params' => array($this->view->title,$this->view->selectmenu,$response)
+			));
+		}
 	}
 	
 	public function groupAction()
 	{
 		$this->view->title = "Sending Group - ";
 		$this->view->selectmenu = "mgroup";
-		//$this->view->response = $response;
+		if($this->request->isPost()){
+			$response = $this->smsweb->sendSMS(
+				$this->request->getPost('rcpt'),
+				$this->request->getPost('msg')
+				);
+			return $this->dispatcher->forward(array(
+				'action' => 'sent',
+				'params' => array($this->view->title,$this->view->selectmenu,$response)
+			));
+		}
 	}
 
 }

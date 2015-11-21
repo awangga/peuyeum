@@ -6,5 +6,5 @@
 
 <em>{{ response }}</em>
 <p>
-{{ link_to('send','Back') }}
+{{ link_to('.','Back') }}
 </p>
