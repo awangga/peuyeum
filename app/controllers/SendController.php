@@ -47,6 +47,14 @@ class SendController extends \Phalcon\Mvc\Controller
 	{
 		$this->view->title = "Sending Group - ";
 		$this->view->selectmenu = "mgroup";
+		$groups = Users::aggregate(
+		        array(
+		            '$group' => array(
+		                '_id' => '$group'
+		            )
+		        )    
+		);
+		$this->view->kel = $groups['result'];
 		if($this->request->isPost()){
 			$response = $this->smsweb->sendSMS(
 				$this->request->getPost('rcpt'),

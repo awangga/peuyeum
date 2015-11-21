@@ -5,9 +5,14 @@
 
 {{ form("", "class":"form-horizontal","role":"form","method": "post") }}
     <div class="form-group">
-	    <label class="control-label col-sm-2" for="email">Number(s) : </label>
+	    <label class="control-label col-sm-2" for="email">Group : </label>
 	    <div class="col-sm-10">
-			{{ text_field('rcpt','class':'form-control','placeholder':'081100000,08880909121,089900000')}}
+			<select id="group" name="group" class="form-control">
+					{% for grup in kel %}
+					<option value="{{ grup['_id'] }}">{{ grup['_id'] }}</option>
+					{% endfor %}
+			</select>
+		
 	    </div>
 	</div>
 	<div class="form-group">
@@ -26,6 +31,8 @@
 
 <p>SMS Group.</p>
 
+<em>
+</em>
 
 
 <p>
