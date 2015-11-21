@@ -26,6 +26,20 @@ class SendController extends \Phalcon\Mvc\Controller
 		$this->view->selectmenu = "send";
 		$this->view->response = $response;
 	}
+	
+	public function personalAction()
+	{
+		$this->view->title = "Sending Personal - ";
+		$this->view->selectmenu = "mpersonal";
+		//$this->view->response = $response;
+	}
+	
+	public function groupAction()
+	{
+		$this->view->title = "Sending Group - ";
+		$this->view->selectmenu = "mgroup";
+		//$this->view->response = $response;
+	}
 
 }
 

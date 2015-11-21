@@ -9,10 +9,10 @@
 		<meta name="description" content="SWIM : SMS Gateway Web Service Interface Module">
 	    <meta name="author" content="Rolly Maulana Awangga">
 	<title>{{ title }} SMS Gateway Web Service Interface Module</title>
-		<link rel="shortcut icon" href="img/favicon.png">
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-	    <link href="css/simple-sidebar.css" rel="stylesheet">
-	    <link href="font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet">
+		{{ stylesheet_link("css/bootstrap.min.css") }}
+		{{ stylesheet_link("css/simple-sidebar.css") }}
+		{{ stylesheet_link("font-awesome-4.3.0/css/font-awesome.min.css") }}
+
     </head>
 
     <body>
@@ -36,11 +36,12 @@
 		        <div id="sidebar-wrapper">
 		            <ul class="sidebar-nav nav-pills nav-stacked" id="menu">
 
-		                <li {% if selectmenu == "dashboard" %}class="active"{% endif %}>
-		                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-dashboard fa-stack-1x "></i></span> Dashboard</a>
+		                <li {% if selectmenu == "messaging" %}class="active"{% endif %}>
+		                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-dashboard fa-stack-1x "></i></span>Messaging</a>
 		                       <ul class="nav-pills nav-stacked" style="list-style-type:none;">
-		                        <li {% if selectmenu == "settings" %}class="active"{% endif %}><a href="settings"><span class="fa-stack fa-lg pull-left"><i class="fa fa-wrench fa-stack-1x "></i></span>Settings</a></li>
-		                        <li><a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-user fa-stack-1x "></i></span>Profile</a></li>
+		                        <li {% if selectmenu == "mgroup" %}class="active"{% endif %}><a href="send/group"><span class="fa-stack fa-lg pull-left"><i class="fa fa-users fa-stack-1x "></i></span>Group</a></li>
+		                        <li {% if selectmenu == "mpersonal" %}class="active"{% endif %}><a href="send/personal"><span class="fa-stack fa-lg pull-left"><i class="fa fa-user fa-stack-1x "></i></span>Personal</a></li>
+								<li {% if selectmenu == "settings" %}class="active"{% endif %}><a href="settings"><span class="fa-stack fa-lg pull-left"><i class="fa fa-wrench fa-stack-1x "></i></span>Settings</a></li>
 		                    	</ul>
 		                </li>
 		                <li {% if selectmenu == "send" %}class="active"{% endif %}>
