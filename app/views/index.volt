@@ -22,7 +22,8 @@
 		                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"  id="menu-toggle">
 		                      <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
 		                    </button>
-		                    <a class="navbar-brand" href="."><i class="fa fa-rocket fa-4"></i> peuyeum</a>        
+							{{ link_to('','<i class="fa fa-rocket fa-4"></i> peuyeum', 'class': 'navbar-brand') }}
+		                     
 		                </div><!-- navbar-header-->
 
 		                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -39,25 +40,31 @@
 		                <li {% if selectmenu == "messaging" %}class="active"{% endif %}>
 		                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-dashboard fa-stack-1x "></i></span>Messaging</a>
 		                       <ul class="nav-pills nav-stacked" style="list-style-type:none;">
-		                        <li {% if selectmenu == "mgroup" %}class="active"{% endif %}><a href="send/group"><span class="fa-stack fa-lg pull-left"><i class="fa fa-users fa-stack-1x "></i></span>Group</a></li>
-		                        <li {% if selectmenu == "mpersonal" %}class="active"{% endif %}><a href="send/personal"><span class="fa-stack fa-lg pull-left"><i class="fa fa-user fa-stack-1x "></i></span>Personal</a></li>
-								<li {% if selectmenu == "settings" %}class="active"{% endif %}><a href="settings"><span class="fa-stack fa-lg pull-left"><i class="fa fa-wrench fa-stack-1x "></i></span>Settings</a></li>
+		                        <li {% if selectmenu == "mgroup" %}class="active"{% endif %}>
+								{{ link_to('send/group','<span class="fa-stack fa-lg pull-left"><i class="fa fa-users fa-stack-1x "></i></span>Group') }}
+								</li>
+		                        <li {% if selectmenu == "mpersonal" %}class="active"{% endif %}>
+								{{ link_to('send/personal','<span class="fa-stack fa-lg pull-left"><i class="fa fa-user fa-stack-1x "></i></span>Personal') }}
+								</li>
+								<li {% if selectmenu == "settings" %}class="active"{% endif %}>
+								{{ link_to('settings','<span class="fa-stack fa-lg pull-left"><i class="fa fa-wrench fa-stack-1x "></i></span>Settings') }}
+								</li>
 		                    	</ul>
 		                </li>
 		                <li {% if selectmenu == "send" %}class="active"{% endif %}>
-		                    <a href="send"><span class="fa-stack fa-lg pull-left"><i class="fa fa-envelope-o fa-stack-1x "></i></span>Send</a>
+							{{ link_to('send','<span class="fa-stack fa-lg pull-left"><i class="fa fa-envelope-o fa-stack-1x "></i></span>Send') }}
 		                </li>
 		                <li {% if selectmenu == "outbox" %}class="active"{% endif %}>
-		                    <a href="outbox"> <span class="fa-stack fa-lg pull-left"><i class="fa fa-external-link fa-stack-1x "></i></span>Outbox</a>
+							{{ link_to('outbox','<span class="fa-stack fa-lg pull-left"><i class="fa fa-external-link fa-stack-1x "></i></span>Outbox') }}
 		                </li>
 		                <li {% if selectmenu == "sentitems" %}class="active"{% endif %}>
-		                    <a href="sentitems"><span class="fa-stack fa-lg pull-left"><i class="fa fa-check fa-stack-1x "></i></span>Sent Items</a>
+							{{ link_to('sentitems','<span class="fa-stack fa-lg pull-left"><i class="fa fa-check fa-stack-1x "></i></span>Sent Items') }}
 		                </li>
 		                <li {% if selectmenu == "errors" %}class="active"{% endif %}>
-		                    <a href="errors"><span class="fa-stack fa-lg pull-left"><i class="fa fa-close fa-stack-1x "></i></span>Errors</a>
+							{{ link_to('errors','<span class="fa-stack fa-lg pull-left"><i class="fa fa-close fa-stack-1x "></i></span>Errors') }}
 		                </li>
 		                <li {% if selectmenu == "about" %}class="active"{% endif %}>
-		                    <a href="about"><span class="fa-stack fa-lg pull-left"><i class="fa fa-users fa-stack-1x "></i></span>About</a>
+							{{ link_to('about','<span class="fa-stack fa-lg pull-left"><i class="fa fa-users fa-stack-1x "></i></span>About') }}
 		                </li>
 		            </ul>
 		        </div><!-- /#sidebar-wrapper -->
