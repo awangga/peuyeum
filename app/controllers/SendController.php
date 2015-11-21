@@ -56,8 +56,25 @@ class SendController extends \Phalcon\Mvc\Controller
 		);
 		$this->view->kel = $groups['result'];
 		if($this->request->isPost()){
+			$group=$this->request->getPost('group');
+			$userslist = Users::find(
+			        array(
+			            array(
+			                'group' => $group
+			            )
+			        )    
+			);
+			
+			$rcpt="";
+			foreach ($userslist as $user){
+				if(!$rcpt){
+				$rcpt = $user->num;
+				}else{
+				$rcpt = $rcpt.','.$user->num;
+				}
+			}
 			$response = $this->smsweb->sendSMS(
-				$this->request->getPost('rcpt'),
+				$rcpt,
 				$this->request->getPost('msg')
 				);
 			return $this->dispatcher->forward(array(
