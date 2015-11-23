@@ -12,7 +12,11 @@
 		{{ stylesheet_link("css/bootstrap.min.css") }}
 		{{ stylesheet_link("css/simple-sidebar.css") }}
 		{{ stylesheet_link("font-awesome-4.3.0/css/font-awesome.min.css") }}
+		{{ javascript_include("js/jquery-1.11.2.min.js") }}
+		{{ javascript_include("js/bootstrap.min.js") }}
 
+		{{ stylesheet_link("css/bootstrap-multiselect.css") }}
+		{{ javascript_include("js/bootstrap-multiselect.js") }}
     </head>
 
     <body>
@@ -40,7 +44,10 @@
 		                <li {% if selectmenu == "messaging" %}class="active"{% endif %}>
 		                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-envelope-o fa-stack-1x "></i></span>Messaging</a>
 		                       <ul class="nav-pills nav-stacked" style="list-style-type:none;">
-		                        <li {% if selectmenu == "mgroup" %}class="active"{% endif %}>
+		                        <li {% if selectmenu == "mgroups" %}class="active"{% endif %}>
+								{{ link_to('send/groups','<span class="fa-stack fa-lg pull-left"><i class="fa fa-check-square-o fa-stack-1x "></i></span>Multi Groups') }}
+								</li>
+								<li {% if selectmenu == "mgroup" %}class="active"{% endif %}>
 								{{ link_to('send/group','<span class="fa-stack fa-lg pull-left"><i class="fa fa-users fa-stack-1x "></i></span>Group') }}
 								</li>
 		                        <li {% if selectmenu == "mpersonal" %}class="active"{% endif %}>
@@ -78,8 +85,7 @@
 								    </div>
 								    <!-- /#wrapper -->
 								    <!-- jQuery -->
-								    <script src="js/jquery-1.11.2.min.js"></script>
-								    <script src="js/bootstrap.min.js"></script>
-								    <script src="js/sidebar_menu.js"></script>
+
+								{{ javascript_include("js/sidebar_menu.js") }}
     </body>
 </html>

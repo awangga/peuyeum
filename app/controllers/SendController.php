@@ -83,6 +83,51 @@ class SendController extends \Phalcon\Mvc\Controller
 			));
 		}
 	}
+	
+	public function groupsAction()
+	{
+		$this->view->title = "Sending Groups - ";
+		$this->view->selectmenu = "mgroups";
+		$groups = Users::aggregate(
+		        array(
+		            '$group' => array(
+		                '_id' => '$group'
+		            )
+		        )    
+		);
+		$this->view->kel = $groups['result'];
+		if($this->request->isPost()){
+			$groups=$this->request->getPost('group');
+			$responses = '';
+			foreach ($groups as $group){
+				$userslist = Users::find(
+				        array(
+				            array(
+				                'group' => $group
+				            )
+				        )    
+				);
+			
+				$rcpt="";
+				foreach ($userslist as $user){
+					if(!$rcpt){
+					$rcpt = $user->num;
+					}else{
+					$rcpt = $rcpt.','.$user->num;
+					}
+				}
+				$response = $this->smsweb->sendSMS(
+					$rcpt,
+					$this->request->getPost('msg')
+					);
+				$responses=$responses.'\n'.$response;
+			}
+			return $this->dispatcher->forward(array(
+				'action' => 'sent',
+				'params' => array($this->view->title,$this->view->selectmenu,$responses)
+			));
+		}
+	}
 
 }
 
