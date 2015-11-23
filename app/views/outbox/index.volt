@@ -13,8 +13,10 @@
 	      </tr>
 	    </thead>
 		<tbody>
+
 			{% for outbox in response %}
 			{% set out =  outbox|json_decode %}
+			{% if(not(out is empty)) %}
 		      <tr>
 		        <td><?php 
 				$acc = $out->_id;
@@ -27,7 +29,9 @@
 				$date = date('M j', $acc->{'$date'});
 				print_r($date); ?></td>
 		      </tr>
+			{% endif %}
 			{% endfor %}
+			
 		</tbody>
 </table>
 </div>
