@@ -2,8 +2,12 @@
 
 class SmsWeb
 {
-
-    public function post($url,$params)
+	public function getURL(){
+		$url = "http://simpon.ddns.net/";
+		return $url;
+	}
+    
+	public function post($url,$params)
     {
 		$postData = '';
 	   //create name value pairs seperated by &
@@ -32,7 +36,25 @@ class SmsWeb
 		   "rcpt" => $rcpt,
 		   "msg" => $msg
 		);
-		$response = $this->post('http://batikku.ml/s.py',$params);
+		$response = $this->post($this->getURL().'s.py',$params);
+		return $response;
+	}
+	public function getOutboxs()
+	{
+		$params = "outbox";
+		$response = $this->post($this->getURL().'outboxs.py',$params);
+		return $response;
+	}
+	public function getSentitems()
+	{
+		$params = "sentitems";
+		$response = $this->post($this->getURL().'sentitems.py',$params);
+		return $response;
+	}
+	public function getErrors()
+	{
+		$params = "errors";
+		$response = $this->post($this->getURL().'errors.py',$params);
 		return $response;
 	}
 

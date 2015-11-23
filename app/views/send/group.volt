@@ -29,11 +29,6 @@
     
 {{ endForm() }}
 
-<p>SMS Group.</p>
-
-<em>
-</em>
-
 
 <p>
 {{ link_to('','Back') }}

@@ -2,6 +2,33 @@
     <h1>Outbox!</h1>
 </div>
 
-<p>The response is {{ response }} </p>
+<div class="table-responsive">  
+<table class="table">
+	<thead>
+	      <tr>
+	        <th>id</th>
+	        <th>Number</th>
+	        <th>Message</th>
+	        <th>Date Time</th>
+	      </tr>
+	    </thead>
+		<tbody>
+			{% for outbox in response %}
+			{% set out =  outbox|json_decode %}
+		      <tr>
+		        <td><?php 
+				$acc = $out->_id;
+				print_r($acc->{'$oid'}); ?>
+			</td>
+		        <td>{{ out.rcpt }}</td>
+		        <td>{{ out.msg }}</td>
+		        <td><?php 
+				$acc = $out->timestamp;
+				$date = date('M j', $acc->{'$date'});
+				print_r($date); ?></td>
+		      </tr>
+			{% endfor %}
+		</tbody>
+</table>
+</div>
 
-<em>This page is located at views/index/index.phtml</em>

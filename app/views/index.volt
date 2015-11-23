@@ -38,7 +38,7 @@
 		            <ul class="sidebar-nav nav-pills nav-stacked" id="menu">
 
 		                <li {% if selectmenu == "messaging" %}class="active"{% endif %}>
-		                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-dashboard fa-stack-1x "></i></span>Messaging</a>
+		                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-envelope-o fa-stack-1x "></i></span>Messaging</a>
 		                       <ul class="nav-pills nav-stacked" style="list-style-type:none;">
 		                        <li {% if selectmenu == "mgroup" %}class="active"{% endif %}>
 								{{ link_to('send/group','<span class="fa-stack fa-lg pull-left"><i class="fa fa-users fa-stack-1x "></i></span>Group') }}
@@ -46,14 +46,9 @@
 		                        <li {% if selectmenu == "mpersonal" %}class="active"{% endif %}>
 								{{ link_to('send/personal','<span class="fa-stack fa-lg pull-left"><i class="fa fa-user fa-stack-1x "></i></span>Personal') }}
 								</li>
-								<li {% if selectmenu == "settings" %}class="active"{% endif %}>
-								{{ link_to('settings','<span class="fa-stack fa-lg pull-left"><i class="fa fa-wrench fa-stack-1x "></i></span>Settings') }}
-								</li>
 		                    	</ul>
 		                </li>
-		                <li {% if selectmenu == "send" %}class="active"{% endif %}>
-							{{ link_to('send','<span class="fa-stack fa-lg pull-left"><i class="fa fa-envelope-o fa-stack-1x "></i></span>Send') }}
-		                </li>
+		            
 		                <li {% if selectmenu == "outbox" %}class="active"{% endif %}>
 							{{ link_to('outbox','<span class="fa-stack fa-lg pull-left"><i class="fa fa-external-link fa-stack-1x "></i></span>Outbox') }}
 		                </li>

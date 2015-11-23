@@ -8,8 +8,9 @@ class ErrorsController extends \Phalcon\Mvc\Controller
     {
 		$this->view->title = "Errors - ";
 		$this->view->selectmenu	= "errors";
-		$response = $this->smsweb->post('http://batikku.ml/errors.py','errors');
-		$this->view->response = $response;
+		$response = $this->smsweb->getErrors();
+		$data = str_getcsv($response, "\n");
+		$this->view->response = $data;
     }
 
 }

@@ -8,8 +8,9 @@ class SentitemsController extends \Phalcon\Mvc\Controller
     {
 		$this->view->title = "Sentitems - ";
 		$this->view->selectmenu	= "sentitems";
-		$response = $this->smsweb->post('http://batikku.ml/sentitems.py','sentitems');
-		$this->view->response = $response;
+		$response = $this->smsweb->getSentitems();
+		$data = str_getcsv($response, "\n");
+		$this->view->response = $data;
     }
 
 }
