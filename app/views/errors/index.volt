@@ -18,6 +18,7 @@
 		<tbody>
 			{% for error in response %}
 			{% set err =  error|json_decode %}
+			{% if(not(err is empty)) %}
 		      <tr>
 		        <td><?php 
 				$acc = $err->_id;
@@ -30,6 +31,7 @@
 				$date = date('M j', $acc->{'$date'});
 				print_r($date); ?></td>
 		      </tr>
+		{% endif %}
 			{% endfor %}
 		</tbody>
 </table>

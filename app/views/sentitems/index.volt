@@ -16,6 +16,7 @@
 		<tbody>
 			{% for error in response %}
 			{% set err =  error|json_decode %}
+			{% if(not(err is empty)) %}
 		      <tr>
 		        <td><?php 
 				$acc = $err->_id;
@@ -25,6 +26,7 @@
 		        <td>{{ err.msg }}</td>
 		        <td>{{ err.timestamp }}</td>
 		      </tr>
+			{% endif %}
 			{% endfor %}
 		</tbody>
 </table>
