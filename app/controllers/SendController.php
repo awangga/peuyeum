@@ -120,7 +120,7 @@ class SendController extends \Phalcon\Mvc\Controller
 					$rcpt,
 					$this->request->getPost('msg')
 					);
-				$responses=$responses.'\n'.$response;
+				$responses=$responses."\n".$response;
 			}
 			return $this->dispatcher->forward(array(
 				'action' => 'sent',
