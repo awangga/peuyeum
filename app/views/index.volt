@@ -55,7 +55,9 @@
 								</li>
 		                    	</ul>
 		                </li>
-		            
+		            	<li {% if selectmenu == "comments" %}class="active"{% endif %}>
+							{{ link_to('comments','<span class="fa-stack fa-lg pull-left"><i class="fa fa-comments fa-stack-1x "></i></span>Comments') }}
+		                </li>
 		                <li {% if selectmenu == "outbox" %}class="active"{% endif %}>
 							{{ link_to('outbox','<span class="fa-stack fa-lg pull-left"><i class="fa fa-external-link fa-stack-1x "></i></span>Outbox') }}
 		                </li>

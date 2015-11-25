@@ -27,10 +27,11 @@ class SendController extends \Phalcon\Mvc\Controller
 		$this->view->response = $response;
 	}
 	
-	public function personalAction()
+	public function personalAction($num=null)
 	{
 		$this->view->title = "Sending Personal - ";
 		$this->view->selectmenu = "mpersonal";
+		$this->view->number = $num;
 		if($this->request->isPost()){
 			$response = $this->smsweb->sendSMS(
 				$this->request->getPost('rcpt'),

@@ -6,7 +6,7 @@
   <div class="form-group">
     <label class="control-label col-sm-2" for="email">Number(s) : </label>
     <div class="col-sm-10">
-		{{ text_field('rcpt','class':'form-control','placeholder':'081100000,08880909121,089900000')}}
+		{{ text_field('rcpt','class':'form-control','placeholder':'081100000,08880909121,089900000','value':number)}}
     </div>
   </div>
   <div class="form-group">
