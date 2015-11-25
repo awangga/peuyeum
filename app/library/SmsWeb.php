@@ -57,6 +57,18 @@ class SmsWeb
 		$response = $this->post($this->getURL().'errors.py',$params);
 		return $response;
 	}
+	public function getCommands()
+	{
+		$params = "commands";
+		$response = $this->post($this->getURL().'commands.py',$params);
+		return $response;
+	}
+	public function getComments()
+	{
+		$params = "comments";
+		$response = $this->post($this->getURL().'comments.py',$params);
+		return $response;
+	}
 
 }
 
