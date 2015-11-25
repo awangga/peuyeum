@@ -25,7 +25,16 @@ class ParserController extends \Phalcon\Mvc\Controller
 				            )
 				        )    
 				);
-				if($userslist){//if group exist
+				$num = str_replace("+62","0",$sms->from);
+				$cekuserongroup = Users::find(
+				        array(
+				            array(
+				                'group' => $group,
+								'num'=> $num
+				            )
+				        )    
+				);
+				if($userslist && $cekuserongroup){//if group exist
 					$rcpt="";
 					foreach ($userslist as $user){
 						if(!$rcpt){
