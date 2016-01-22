@@ -31,12 +31,17 @@ WriteResult({ "nInserted" : 1 })
 ```
 
 
-## for reading and processing inbox
+## Inbox parser
+
 run command 
 
 ```sh
 root@server# ./inboxparser.py &
 ```
+
+This feature parsing sms inbox and devide it to commands and comments 
+Command :
+1. Broadcast to group : groupname#message
 
 
 ## Reference
