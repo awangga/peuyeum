@@ -23,7 +23,7 @@
 				print_r($acc->{'$oid'}); ?>
 			</td>
 		        <td>{{ link_to('/send/personal/'~out.from,out.from) }}</td>
-		        <td>{{ out.msg }}</td>
+		        <td>{{ out.msg|striptags }}</td>
 		        <td><?php 
 				$acc = $out->timestamp;
 				$date = date('M j', $acc->{'$date'});
