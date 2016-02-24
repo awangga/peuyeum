@@ -1,5 +1,6 @@
 /app/cache/
 /config/development/
+app/config/config.php
 .DS_Store
 *.DS_Store*
 
