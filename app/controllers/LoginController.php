@@ -1,13 +1,13 @@
 <?php
 
-class IndexController extends ControllerBase
+class LoginController extends ControllerBase
 {
 
     public function indexAction()
     {
 		$this->view->title = "Home - ";
 		$this->view->selectmenu	= "home";
-		if ($this->session->has("user-name")) {
+		/*if ($this->session->has("user-name")) {
 
 		            // Retrieve its value
 		            $name = $this->session->get("user-name");
@@ -16,6 +16,7 @@ class IndexController extends ControllerBase
 		$this->view->disable();
 		//$this->session->set("user-name", "rolly ganteng");
 		$this->session->remove("user-name");
+		*/
     }
 
 }

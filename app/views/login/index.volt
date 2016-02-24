@@ -6,7 +6,7 @@
   <div class="form-group">
     <label class="control-label col-sm-2" for="email">Alias : </label>
     <div class="col-sm-10">
-		{{ text_field('rcpt','class':'form-control','placeholder':'alias of user','value':number)}}
+		{{ text_field('rcpt','class':'form-control','placeholder':'alias of user')}}
     </div>
   </div>
   <div class="form-group">
@@ -22,6 +22,3 @@
   </div>
 </form>
 
-<p>
-{{ link_to('','Back') }}
-</p>
