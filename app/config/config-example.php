@@ -19,11 +19,6 @@ return new \Phalcon\Config(array(
         'pluginsDir'     => APP_PATH . '/app/plugins/',
         'libraryDir'     => APP_PATH . '/app/library/',
         'cacheDir'       => APP_PATH . '/app/cache/',
-        'baseUri'        => '/',
-    ),
-	'peuyeum' => array(
-        'adapter' => 'mongo',
-        'collectionManager'      => 'collectionManager',
-        'dbname'  => 'peuyeum',
+        'baseUri'        => '/peuyeum/',
     )
 ));
