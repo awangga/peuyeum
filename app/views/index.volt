@@ -6,7 +6,7 @@
 		<meta charset="utf-8">
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="SWIM : SMS Gateway Web Service Interface Module">
+		<meta name="description" content="Peuyeum : SMS Gateway Web Service Interface Module">
 	    <meta name="author" content="Rolly Maulana Awangga">
 	<title>{{ title }} SMS Gateway Web Service Interface Module</title>
 		{{ stylesheet_link("css/bootstrap.min.css") }}
