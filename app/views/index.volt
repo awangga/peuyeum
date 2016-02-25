@@ -67,9 +67,13 @@
 		                <li {% if selectmenu == "errors" %}class="active"{% endif %}>
 							{{ link_to('errors','<span class="fa-stack fa-lg pull-left"><i class="fa fa-close fa-stack-1x "></i></span>Errors') }}
 		                </li>
-		                <li {% if selectmenu == "about" %}class="active"{% endif %}>
+		                <li {% if selectmenu == "user" %}class="active"{% endif %}>
+							{{ link_to('user','<span class="fa-stack fa-lg pull-left"><i class="fa fa-user fa-stack-1x "></i></span>User') }}
+		                </li>
+						<li {% if selectmenu == "about" %}class="active"{% endif %}>
 							{{ link_to('about','<span class="fa-stack fa-lg pull-left"><i class="fa fa-users fa-stack-1x "></i></span>About') }}
 		                </li>
+						
 		            </ul>
 		        </div><!-- /#sidebar-wrapper -->
 		        <!-- Page Content -->
