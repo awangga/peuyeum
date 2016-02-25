@@ -1,10 +1,10 @@
 {{ tag_html("div",["class": "page-header"])}}
-    {{ tag_html('h1')}} SMS sent!{{ tag_html_close('h1')}}
+    {{ tag_html('h1')}} User Added {{ tag_html_close('h1')}}
 {{tag_html_close("div")}}
 
-<p>SMS Was sent.</p>
+<p>Success.</p>
 
-<em>{{ response }}</em>
+<em>The id is {{ response }}</em>
 <p>
-{{ link_to('.','Back') }}
+{{ link_to('user','Back') }}
 </p>

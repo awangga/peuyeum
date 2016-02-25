@@ -15,27 +15,14 @@ class UserController extends \Phalcon\Mvc\Controller
 		);
 		$this->view->kel = $groups['result'];
 		if($this->request->isPost()){
-			$group=$this->request->getPost('group');
-			$userslist = Users::find(
-			        array(
-			            array(
-			                'group' => $group
-			            )
-			        )    
-			);
+			$user = new Users();
+			$user->name=$this->request->getPost('name');
+			$user->alias=$this->request->getPost('alias');
+			$user->num=$this->request->getPost('num');
+			$user->group=$this->request->getPost('group');
 			
-			$rcpt="";
-			foreach ($userslist as $user){
-				if(!$rcpt){
-				$rcpt = $user->num;
-				}else{
-				$rcpt = $rcpt.','.$user->num;
-				}
-			}
-			$response = $this->smsweb->sendSMS(
-				$rcpt,
-				$this->request->getPost('msg')
-				);
+			$user->save();
+			$response = $user->getId();
 			return $this->dispatcher->forward(array(
 				'action' => 'sent',
 				'params' => array($this->view->title,$this->view->selectmenu,$response)
@@ -48,10 +35,14 @@ class UserController extends \Phalcon\Mvc\Controller
 		$this->view->title = "Send - ";
 		$this->view->selectmenu	= "user";
 		if($this->request->isPost()){
-			$response = $this->smsweb->sendSMS(
-				$this->request->getPost('rcpt'),
-				$this->request->getPost('msg')
-				);
+			$user = new Users();
+			$user->name=$this->request->getPost('name');
+			$user->alias=$this->request->getPost('alias');
+			$user->num=$this->request->getPost('num');
+			$user->group=$this->request->getPost('group');
+			
+			$user->save();
+			$response = $user->getId();
 			return $this->dispatcher->forward(array(
 				'action' => 'sent',
 				'params' => array($this->view->title,$this->view->selectmenu,$response)
