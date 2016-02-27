@@ -70,6 +70,9 @@
 		                <li {% if selectmenu == "user" %}class="active"{% endif %}>
 							{{ link_to('user','<span class="fa-stack fa-lg pull-left"><i class="fa fa-user fa-stack-1x "></i></span>User') }}
 		                </li>
+						<li {% if selectmenu == "password" %}class="active"{% endif %}>
+							{{ link_to('password','<span class="fa-stack fa-lg pull-left"><i class="fa fa-key fa-stack-1x "></i></span>Password') }}
+		                </li>
 						<li {% if selectmenu == "about" %}class="active"{% endif %}>
 							{{ link_to('about','<span class="fa-stack fa-lg pull-left"><i class="fa fa-users fa-stack-1x "></i></span>About') }}
 		                </li>
