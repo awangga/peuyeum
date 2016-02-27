@@ -21,7 +21,7 @@ class PasswordController extends \Phalcon\Mvc\Controller
 	
 	public function groupAction($id=null)
 	{
-		$this->view->title = "Set User Password - ";
+		$this->view->title = "List User - ";
 		$this->view->selectmenu	= "password";
 		$this->view->users = Users::find(
 			array(
@@ -32,6 +32,23 @@ class PasswordController extends \Phalcon\Mvc\Controller
 		);
 	}
 	
+	public function setAction($id=null)
+	{
+		$this->view->title = "Set Password - ";
+		$this->view->selectmenu = "password";
+		if($this->request->isPost()){
+			$user = Users::findById($id);
+			$password = $this->request->getPost('password');
+			$user->password = $this->security->hash($password);
+			$response = $id;
+			$user->save();
+			return $this->dispatcher->forward(array(
+				'action' => 'index',
+				'params' => array($this->view->title,$this->view->selectmenu,$response)
+			));
+		}
+		
+	}
 
 }
 
